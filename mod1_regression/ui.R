@@ -149,13 +149,17 @@ shinyUI(pageWithSidebar(
   # Sidebar with a slider input for number of observations
   sidebarPanel(
       #Help text
-      helpText("Explore different methods for dealing with temporal autocorrelation. Enter a search term below to get started."),
+      helpText("Explore different methods for dealing with temporal autocorrelation. Choose a dataset to get started."),
       
+      #Select dataset
+      selectInput("dataset", "Choose a dataset:", 
+                  choices = c("Google ngrams","WB climate"),
+                  selected = "WB climate"),
       #Search Term
-      textInput("term", "Google Ngrams Search Term(s):", value = "climate"),
-      
+      htmlOutput("selectUI"),
+
       # Specification of range within an interval
-      numericInput("start","From Year:",value=1950),
+      numericInput("start","From Year:",value=1900),
       numericInput("end","To Year:",value=2010),
       
       # Options to display trend and diagnostic plots.
