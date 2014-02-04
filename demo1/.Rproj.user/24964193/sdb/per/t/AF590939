@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\n\n# Define UI for application that plots google searches for cats over time.\nshinyUI(pageWithSidebar(\n  \n  # Application title\n  headerPanel(\n    HTML(\n      '<div id=\"stats_header\">\n          <img id=\"stats_logo\" align=\"right\" \n              alt=\"deltaC: Statistics for environmental change\" \n              src=\"https://dl.dropboxusercontent.com/u/596355/deltac_logo_small.png\" />\n          <h2>Module 1: When is a trend actually trending?</h2>\n          <h3>Autocorrelation in Regression</h3>\n        </div>'\n    ),\n    windowTitle=\"deltaC Module #1: When is a trend actually trending?\"\n  ),\n    \n  # Sidebar with a slider input for number of observations\n  sidebarPanel(\n      #Help text\n      helpText(\"Explore different methods for dealing with temporal autocorrelation. Enter a search term below to get started.\"),\n      \n      #Search Term\n      textInput(\"term\", \"Google Ngrams Search Term(s):\", value = \"climate\"),\n      \n      # Specification of range within an interval\n      numericInput(\"start\",\"From Year:\",value=1950),\n      numericInput(\"end\",\"To Year:\",value=2010),\n      \n      # Options to display trend and diagnostic plots.\n      checkboxInput(\"trend\",\"Show Linear Trend\",value=F),\n      checkboxInput(\"diag\",\"Show Diagnostic Plots\",value=F),\n      checkboxInput(\"mod\",\"Show Model Output\",value=F),\n      \n      # Displays model output in sidebar\n      conditionalPanel(condition=\"input.conditionedPanels=='OLS'\",\n                       tableOutput(\"ols_modTable\")),\n      conditionalPanel(condition=\"input.conditionedPanels=='Subsampling'\",\n                       tableOutput(\"sub_modTable\")),\n    \n    # Displays options for subsampling.\n    conditionalPanel(condition=\"input.conditionedPanels=='Subsampling'\",\n           wellPanel(\n             helpText(\"Subsampling Options:\"),\n             sliderInput(\"sub\",\"Subsampling Interval (Years)\",\n                         min=0,\n                         max=5,\n                         value=1))\n           )\n  ),\n  \n  # Draw plots of the generated timeseries.\n  mainPanel(\n    tabsetPanel(id = \"conditionedPanels\",\n      tabPanel(\"OLS\",    \n               plotOutput(\"ols_timePlot\",height=300),\n               plotOutput(\"ols_diagPlot\",height=300)),\n      tabPanel(\"Subsampling\",\n               plotOutput(\"sub_timePlot\",height=300),\n               plotOutput(\"sub_diagPlot\",height=300)),\n      tabPanel(\"Lagging\",\n              helpText(\"Nothing Here Yet\")),\n      tabPanel(\"GLS\",\n               helpText(\"Nothing Here Yet\"))\n    )\n  )\n))",
+    "created" : 1386627606608.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "493586117",
+    "id" : "AF590939",
+    "lastKnownWriteTime" : 1386705268,
+    "path" : "~/code/delta_c/autocorr_regression/ui.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

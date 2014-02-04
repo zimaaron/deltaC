@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\nshinyUI(pageWithSidebar(\n  headerPanel(\"Overfitting\"),\n  sidebarPanel(\n    numericInput(\"n_obs\", \"Number of Random Observations:\", \n                min=1,max=500,value=50),\n    sliderInput(\"n_covar\", \"Number of Random Covariates:\", \n                min=1,max=5,value=4),\n    selectInput(\"sel_method\", \"Model Selection Direction\", \n                choices = c(\"backward\", \"both\"),\n                selected=\"both\"),\n    helpText(\"Remember von Neumann!\"),\n    img(src=\"http://upload.wikimedia.org/wikipedia/commons/5/5e/JohnvonNeumann-LosAlamos.gif\",\n        width=150)),\n  mainPanel(\n    h4(\"Step-wise selected best model:\"),\n    verbatimTextOutput(\"print_fit\"))\n))\n",
+    "created" : 1383697352431.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1113050159",
+    "id" : "2619ED31",
+    "lastKnownWriteTime" : 1383591405,
+    "path" : "~/Desktop/Week5_Web_Interaction/shiny_demo/overfit/ui.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
