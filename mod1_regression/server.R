@@ -1,6 +1,7 @@
 library(shiny)
 library(ngramr)
 library(rWBclimate)
+library(nlme)
 library(xtable)
 
 # Define server logic required to download and plot trend data
@@ -26,6 +27,14 @@ shinyServer(function(input, output) {
     }
   })
   
+  output$selectLink <- renderUI({
+    if(input$dataset=="Google ngrams"){
+      HTML("<a href=https://books.google.com/ngrams/info target='_blank'>Data Details</a>")
+    }else if(input$dataset=="WB climate"){
+      HTML("<a href=http://data.worldbank.org/developers/climate-data-api target='_blank'>Data Details</a>")
+    }
+  })
+  
   ##Takes inputs from the date range input.
   year_start <- reactive({input$start})
   year_end <- reactive({input$end})
@@ -35,7 +44,11 @@ shinyServer(function(input, output) {
   
   ##Takes input from the lagging control
   lag_factor <- reactive({input$lag})
-
+  
+  ##Takes input from the GLS autoregressive order control
+  ar_factor <- reactive({input$ar_order})
+  
+  ## Renders the initial plot
   output$ols_timePlot <- renderPlot({
     
     ##Standardizes column names
@@ -148,7 +161,7 @@ shinyServer(function(input, output) {
           model <- lm(tdata3$data~tdata3$year)
           coefs <- summary(model)$coefficients
           rownames(coefs) <- c("Int.","Year")
-          return(coefs)
+          return(format(coefs,scientific=5,digits=2))
         }
       },digits=-2)
     
@@ -231,10 +244,84 @@ shinyServer(function(input, output) {
         ##Creates a lagged regression model.
         model <- lm(tdata2$data~tdata2$year+tdata2$data_lag)
         coefs <- summary(model)$coefficients
-        rownames(coefs) <- c("Int.","Year","Lagged Response")
-        return(coefs)
+        rownames(coefs) <- c("Int.","Year","Lag Year")
+        return(format(coefs,scientific=5,digits=2))
       }
     },digits=-2)
+  
+  output$gls_timePlot <- renderPlot({
+    ##Standardizes column names
+    tdata <- tdata()
+    colnames(tdata) <- c("year","data")
     
+    ##Subsets the data.
+    tdata2 <- tdata[tdata$year>=year_start() & tdata$year<=year_end(),]
+    
+    ##Plots the data.
+    plot(tdata2$year,tdata2$data,type='l',col="slateblue",xlab="Year",ylab="",main="Trend over Time")
+    points(tdata2$year,tdata2$data,pch=21,bg="white")
+    if(input$dataset=="Google ngrams"){
+      mtext(side=2,text="Ngram Frequency",line=2)
+    }else if(input$dataset=="WB climate"){
+      mtext(side=2,text="Temp. (C)",line=2)
+    }
+    
+    ##Creates a lagged regression model.
+    model <- gls(data~year,data=tdata2,correlation=corARMA(p=ar_factor(),q=0))
+    
+    if(input$trend==T){
+      gls_pred <- predict(model,newdata=tdata2,type='response')
+      lines(tdata2$year,gls_pred,lty=2)
+    }
+  })
+  
+  output$gls_diagPlot <- renderPlot({
+    if(input$diag==T){
+      ##Standardizes column names
+      tdata <- tdata()
+      colnames(tdata) <- c("year","data")
+      
+      tdata2 <- tdata[tdata$year>=year_start() & tdata$year<=year_end(),]
+      
+      ##Creates a gls regression model.
+      model <- gls(data~year,data=tdata2,correlation=corARMA(p=ar_factor(),q=0))
+      resid <- residuals(model,type="normalized")
+      acf <- acf(resid)
+      par(mfrow=c(1,2))
+      plot(tdata2$year,resid,type="p",main="Residuals",ylab="Normalized Residuals",xlab="Year")
+      abline(h=0)
+      plot(acf,main="Auto-correlation Function",xlab="Lag (Years)")
+    }
+  })
+  
+  output$gls_modTable <- renderTable({
+    if(input$mod==T){
+      ##Standardizes column names
+      tdata <- tdata()
+      colnames(tdata) <- c("year","data")
+      
+      tdata2 <- tdata[tdata$year>=year_start() & tdata$year<=year_end(),]
+      
+      ##Creates a gls regression model.
+      model <- gls(data~year,data=tdata2,correlation=corARMA(p=ar_factor(),q=0))
+      coefs <- summary(model)$tTable
+      rownames(coefs) <- c("Int.","Year")
+      colnames(coefs) <- c("Estimate","Std. Error", "t value", "Pr(> |t|)")
+      return(format(coefs,scientific=5,digits=2))
+    }
+  },digits=-2)
+  
+  ## sets up download options (TODO:subset output)
+  output$downloadData <- downloadHandler(
+    
+    filename = function() { 
+      base <- paste(input$dataset,input$ccode,input$start,input$end, sep='_') 
+      return(paste(base,".csv",sep=""))
+      },
+    content = function(file) {
+      write.csv(tdata(), file)
+    }
+  )
+  
   })
 })

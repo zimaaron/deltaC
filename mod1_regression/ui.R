@@ -157,10 +157,19 @@ shinyUI(pageWithSidebar(
                   selected = "WB climate"),
       #Search Term
       htmlOutput("selectUI"),
+      
+      #Link to details about data source.
+      htmlOutput("selectLink"),
 
       # Specification of range within an interval
-      numericInput("start","From Year:",value=1900),
+      numericInput("start","From Year:",value=1950),
       numericInput("end","To Year:",value=2010),
+      
+      # Add a blank space.
+      HTML("<br>"),
+      
+      # Draws the download button
+      downloadButton('downloadData', 'Download Data (.csv)'),
       
       # Options to display trend and diagnostic plots.
       checkboxInput("trend","Show Linear Trend",value=F),
@@ -174,24 +183,34 @@ shinyUI(pageWithSidebar(
                        tableOutput("sub_modTable")),
       conditionalPanel(condition="input.conditionedPanels=='Lagging'",
                        tableOutput("lag_modTable")),
+      conditionalPanel(condition="input.conditionedPanels=='GLS'",
+                       tableOutput("gls_modTable")),
     
     # Displays options for subsampling.
     conditionalPanel(condition="input.conditionedPanels=='Subsampling'",
-           wellPanel(
-             helpText("Subsampling Options:"),
-             sliderInput("sub","Subsampling Interval (Years)",
-                         min=0,
-                         max=5,
-                         value=1))
-           ),
+                     wellPanel(
+                       helpText("Subsampling Options:"),
+                       sliderInput("sub","Subsampling Interval (Years)",
+                                   min=0,
+                                   max=5,
+                                   value=1))
+                     ),
     conditionalPanel(condition="input.conditionedPanels=='Lagging'",
                      wellPanel(
                        helpText("Lagging Options:"),
                        sliderInput("lag","Interval of Lag (Years)",
-                                   min=0,
+                                   min=1,
                                    max=5,
                                    value=1))
-    )
+                    ),
+   conditionalPanel(condition="input.conditionedPanels=='GLS'",
+                    wellPanel(
+                      helpText("GLS Options:"),
+                      sliderInput("ar_order","Auto-Regressive Order",
+                                  min=1,
+                                  max=5,
+                                  value=1))
+                    )
   ),
   
   # Draw plots of the generated timeseries.
@@ -207,7 +226,8 @@ shinyUI(pageWithSidebar(
                plotOutput("lag_timePlot",height=300),
                plotOutput("lag_diagPlot",height=300)),
       tabPanel("GLS",
-               helpText("Nothing Here Yet"))
+               plotOutput("gls_timePlot",height=300),
+               plotOutput("gls_diagPlot",height=300))
     )
   )
 ))
