@@ -34,6 +34,7 @@ plotfun <- function(series,window,center){
           col=rgb(0.5,0.5,0.5,0.5),border=NA)
   abline(sub_lm,lty=2,lwd=1.5)
   points(c(start:end),sub,pch=21,bg="white")
+  text(0,5.5,pos=4,labels=paste("slope:",round(sub_lm$coefficients[2],digits=3),sep=""))
 }
 
 shinyServer(function(input, output) {
