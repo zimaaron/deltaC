@@ -161,7 +161,7 @@ shinyUI(pageWithSidebar(
                 max = 134, 
                 value = 20,
                 step=10,
-                animate=animationOptions(interval=200, loop=T)),
+                animate=animationOptions(interval=600, loop=T)),
     HTML(
       '<br><br><br>'
     ),
@@ -179,7 +179,7 @@ shinyUI(pageWithSidebar(
                 max = 134, 
                 value = 20,
                 step=10,
-                animate=animationOptions(interval=200, loop=T))
+                animate=animationOptions(interval=600, loop=T))
     ),
   
   # Show a plot of the generated distribution
