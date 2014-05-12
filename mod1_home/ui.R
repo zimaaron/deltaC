@@ -254,10 +254,9 @@ library(shiny)
 </p>'),
              h4("Instructions"),
              HTML('<p>For this exercise, you will be using an interactive web app.</p>  
-                    <p><button class="btn btn-primary" type="button">
+                    <p>
                     <i class="fa fa-refresh"></i>
-                    <a href="http://statmos.uw.edu/shiny/mod1_slope/" target="_blank"><font color="white">Launch App</font></a>
-                    </button></p>
+                    <a href="http://statmos.uw.edu/shiny/mod1_slope/" target="_blank"><button class="btn btn-primary" type="button"><font color="white">Launch App</font></button></a></p>
                    <p>This app is designed to show the influence of autocorrelation on our estimate of a linear trend over time. The dotted lines represent the slope of a linear regression fit to the observations (white circles) within a certain window of time (gray shading). The top trend does not have strong autocorrelation, but the one plotted below does have autocorrelation. You can control the position of the time-window that is used to fit the regression, as well as the width of the window, using the controls.</p>
                   <p> Spend some time exploring the app, and then use it to answer the questions below.</p>'),
              h4("Questions"),
@@ -322,10 +321,10 @@ library(shiny)
                   <img src="acf_equation.png" width=800></img>
                   <p>This equation compares measurements at time <em>k</em>, (<em>y<sub>k</sub></em>) and measurements at the previous times (<em>y<sub>k-h</sub>)</em><sub> </sub>to the mean of all observations in the series <img src="y_bar.png" width=20></img>, for all times for which we have measurements. The resulting number varies between -1 and 1. Values close to 1 indicate that observations separated by a lag of time <em>h</em> are very similar to each other (positive autocorrelation), while values near -1 indicate that they are very different (negative autocorrelation).</p>'),
              h4("Instructions"),
-             HTML('<p>For this exercise, you will need Microsoft Excel, or another spreadsheet program that can read compatible files, along with the Excel Workbook available here: <p><button class="btn btn-primary" type="button">
+             HTML('<p>For this exercise, you will need Microsoft Excel, or another spreadsheet program that can read compatible files, along with the Excel Workbook available here: <p><a href="ocean_acid_autocorr.xlsx"><button class="btn btn-primary" type="button">
                     <i class="fa fa-refresh"></i>
-                    <a href="ocean_acid_autocorr.xlsx"><font color="white">Download Workbook</font></a>
-                    </button></p>
+                    <font color="white">Download Workbook</font>
+                    </button></a></p>
                     <p>This spreadsheet contains data from <a href="http://www.google.com/trends">Google Trends</a>). Google Trends tracks the frequency of web searches through the Google search engine, and has been used as an index of how many internet-connected users are interested in a particular topic over time. The data we will work with represents the relative number of searches for the phrase “ocean acidification” for each week from January 2013 to January 2014. </p>'),
              HTML('<p>• Open the Excel spreadsheet “ocean_acid_autocorr.xlsx”. The first two columns represent the date and the normalized search volume (our measurement of how popular the term “ocean acidification” was on Google). The next column is the same data but shifted “down” by one cell. This means that every row in the table now has the search volume at a particular week in Column B, and the search volume in the previous week in Column C. </p>
                   <p>• The next two columns are different parts of the equation for the autocorrelation function. Double-click on cell D4 to see the formula in that cell. It is using the formula AVERAGE() to find the mean value for all of the cells in that particular column, and is using that number to come up with the numerator component of the ACF for each time-interval. Cell E4 contains the denominator part of the equation. </p>           
@@ -347,10 +346,10 @@ library(shiny)
              h4("Background"),
              HTML('<p>In the last exercise, we explored how to measure the strength of temporal autocorrelation using the autocorrelation function (ACF) and assess whether it might be a problem for making inference about trends over time using linear regression. The calculation of the ACF itself is labor-intensive, so researchers typically employ software to help us assess autocorrelation in the data over many different lags. </p>
                   <p>In this exercise, we will use an interactive web application to examine patterns of autocorrelation in time-series data. You can access the application by clicking the link below: 
-                  <p><button class="btn btn-primary" type="button">
+                  <p><a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
                     <i class="fa fa-refresh"></i>
-                    <a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><font color="white">Launch App</font></a>
-                    </button></p>
+                    <font color="white">Launch App</font>
+                    </button></a></p>
                     <p>This application allows you to search online databases for time-series data, plot the data, apply linear regression, and view diagnostic plots to help see if you can make valid inference using Ordinary Least Squares. If not, it gives you a few alternative strategies for assessing whether something is trending over time. For now, we will focus on interpreting diagnostic plots that help us check whether a regression analysis is valid for time-series data.'),
              h4("Navigating the App"),
              HTML('<p>Here’s a brief field-guide to some of the options in the app:</p>
@@ -404,10 +403,10 @@ library(shiny)
                   <p><em>Disadvantages: </em>The slope associated with year no longer represents the long-term trend. Cannot use observations at the beginning of the series.</p>'),
              h4("Instructions"),
              HTML('<p>In this exercise, we will return to the web app that we used for Exercise 7. You can launch the app in a new tab by clicking the button below.</p>
-                  <p><button class="btn btn-primary" type="button">
+                  <p><a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
                   <i class="fa fa-refresh"></i>
-                  <a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><font color="white">Launch App</font></a>
-                  </button></p>
+                  <font color="white">Launch App</font>
+                  </button></a></p>
                   <p>• In the web app, examine the temperature trend in the USA from 1900 to 2010 by changing the “from Year” and “to Year” fields to 1900 and 2010, respectively. Click all three check-boxes to look at the trend, diagnostic plots, and model outputs for this data. Remind yourself why we can’t trust the standard errors and p-values from the model output using Ordinary Least Squares.</p>
                   <p>• Click on the tab above the trend graph that says “Subsampling”. A new control will appear in the sidebar below that lets you choose how many observations will be between each one that you use in the regression model. Change the sampling interval and watch how it changes the time-trend plot, the diagnostic plots, and the model output.</p>
                   <p>• Click on the tab that says “Lagging”. This will add a lagged value of the response into the regression model. This lagged value now shows up as a blue dotted line on the time-trend plot. The slider control now allows you to change the lag on the new term we’ve added to the regression model. By default, it’s set at a lag of one, meaning that we are using the value in the previous year to predict the value in the current year. Change the value of the lag, and watch how it changes the time-trend plot, the diagnostic plots, and the model output.</p>'),
@@ -436,10 +435,10 @@ library(shiny)
                   '),
              h4("Instructions"),
              HTML('<p>We will return to the web app for this exercise. You can launch the app in a new tab by clicking the button below.</p>
-                  <p><button class="btn btn-primary" type="button">
+                  <p><a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
                   <i class="fa fa-refresh"></i>
-                    <a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><font color="white">Launch App</font></a>
-                    </button></p>
+                    <font color="white">Launch App</font>
+                    </button></a></p>
                   <p>• In the app, find data for the temperature trend in Mexico from 1900 to 2010 by entering “MEX” into the Country Code field, and changing the “from Year” and “to Year” fields to 1900 and 2010, respectively.</p>
                   <p>• Click all three check-boxes to look at the trend, diagnostic plots, and model outputs for this data. In particular, remind yourself why we can’t trust the standard errors and p-values from the model output using Ordinary Least Squares.</p>            
                   <p>• Click on the “GLS” tab above the trend graph. This will fit an AR(1) model to the data using Generalized Least Squares. Compare the plot of the residuals, Autocorrelation Function, and model output from the GLS model to the OLS model.</p>
