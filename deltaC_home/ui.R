@@ -109,8 +109,11 @@ library(shiny)
         padding: 20px 20px; 
         margin: 30px 0px -15px 0px;
         }
+        #trend {
+        margin: -100px 0px 15px 0px;
+        }
         #titletext {
-        padding: 40px 0px 0px 0px;
+        padding: -15px 0px -50px 0px;
         }
         </style>
         </head>
@@ -149,12 +152,12 @@ library(shiny)
       <p>The deltaC project creates interactive web-based materials for classrooms on statistical issues related to climate and climate-change, specifically targeting material for Advanced Placement statistics classes. We are building tools to allow students to easily assemble, analyze, and model data to detect trends in and make connections between the atmosphere, the ocean, ecosystems, and human society. The deltaC project is sponsored by the  <a href=http://statmos.uw.edu>STATMOS network</a> at the University of Washington, with funding from the National Science Foundation.  </p>
       <a href='https://twitter.com/share' class='twitter-share-button' data-size='large' data-count='none'>Tweet</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-   </article>
-   <article>
-   <h2>deltaC's first module is now beta-testing!</h2>
-   <p>Our first curriculum module <a href='http://statmos.uw.edu/shiny/mod1_home'>When is a trend actually trending?</a> is now ready for testing. The module contains a series of exercises designed to explore the influence of temporal-autocorrelation on inference about trends over time.</p>
-           <button>Like</button>
-           </article>"),
+   </article>"),
+   HTML('<article>
+   <h2>Our first module is now beta-testing!</h2>
+   <p>Our first curriculum module <a href="http://statmos.uw.edu/shiny/mod1_home">When is a trend actually trending?</a> is now ready for testing. The module contains a series of exercises designed to explore the influence of temporal-autocorrelation on inference about trends over time.</p>
+   <img id="trend" src="autocorr_trend.png">
+           </article>'),
     HTML("<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='http://i.creativecommons.org/l/by/4.0/88x31.png' /></a><br /><span xmlns:dct='http://purl.org/dc/terms/' href='http://purl.org/dc/dcmitype/InteractiveResource' property='dct:title' rel='dct:type'>deltaC curriculum material</span> by <span xmlns:cc='http://creativecommons.org/ns#' property='cc:attributionName'>STATMOS</span> is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.")
   )
 ))
