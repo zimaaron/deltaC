@@ -1,6 +1,6 @@
 library(shiny)
 
-# Define UI for application that plots google searches for cats over time.
+# Define UI for application that plots stuff over time.
 shinyUI(pageWithSidebar(
   
   # Application title
@@ -16,7 +16,7 @@ shinyUI(pageWithSidebar(
         font-size: 18px; 
         line-height: 24px;
         text-align: center;
-        background: url("http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Morteratsch_glacier_1.jpg/1280px-Morteratsch_glacier_1.jpg");
+        background: url("1280px-Morteratsch_glacier_1.jpg");
         background-size: cover;
         color: white;
         }
@@ -116,25 +116,24 @@ shinyUI(pageWithSidebar(
         <body>
         <header>
         <div id="logo_space">
-        <img id="logo" src="https://dl.dropboxusercontent.com/u/596355/deltac_logo_small.png">
+         <img id="logo" src="deltac_logo_small.png">
         </div>
         <nav id="navigation bar">
         <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="http://statmos.uw.edu/shiny/deltaC_home">Home</a></li>
         <li><a href="#">Modules</a>
         <ul>
-        <li><a href="#">When is a trend actually trending?</a></li>
-        <li><a href="#">World records revisited</a></li>
-        <li><a href="#">The median is not the message</a></li>
+        <li><a href="http://statmos.uw.edu/shiny/mod1_home">When is a trend actually trending?</a></li>
         </ul>
         </li>
         <li><a href="#">Links</a>
         <ul>
-        <li><a href="#">Statmos Home</a></li>
-        <li><a href="#">University of Washington</a></li>
+        <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
+        <li><a href="http://uw.edu">University of Washington</a></li>
+        <li><a href="http://statmos.uw.edu/shiny/deltaC_resources">Other Curriculum Resources</a></li>
         </ul>
         </li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="http://statmos.uw.edu/shiny/deltaC_about">About Us</a></li>
         </ul>
         </nav>
         </header>
@@ -227,7 +226,8 @@ shinyUI(pageWithSidebar(
                plotOutput("lag_diagPlot",height=300)),
       tabPanel("GLS",
                plotOutput("gls_timePlot",height=300),
-               plotOutput("gls_diagPlot",height=300))
+               plotOutput("gls_diagPlot",height=300)),
+      HTML("<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='http://i.creativecommons.org/l/by/4.0/88x31.png' /></a><br /><span xmlns:dct='http://purl.org/dc/terms/' href='http://purl.org/dc/dcmitype/InteractiveResource' property='dct:title' rel='dct:type'>deltaC curriculum material</span> by <span xmlns:cc='http://creativecommons.org/ns#' property='cc:attributionName'>STATMOS</span> is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.")
     )
   )
 ))

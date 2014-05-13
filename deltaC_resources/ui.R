@@ -128,12 +128,10 @@ shinyUI(fluidPage(
       </div>
       <nav id="navigation bar">
       <ul>
-      <li><a href="http://statmos.uw.edu/shiny/home">Home</a></li>
+      <li><a href="http://statmos.uw.edu/shiny/deltaC_home">Home</a></li>
       <li><a href="#">Modules</a>
       <ul>
       <li><a href="http://statmos.uw.edu/shiny/mod1_home">When is a trend actually trending?</a></li>
-      <li><a href="#">World records revisited</a></li>
-      <li><a href="#">The median is not the message</a></li>
       </ul>
       </li>
       <li><a href="#">Links</a>
@@ -143,7 +141,7 @@ shinyUI(fluidPage(
       <li><a href="http://statmos.uw.edu/shiny/deltaC_resources">Other Educational Resources</a></li>
       </ul>
       </li>
-      <li><a href=""http://statmos.uw.edu/shiny/about"">About Us</a></li>
+      <li><a href=""http://statmos.uw.edu/shiny/deltaC_about"">About Us</a></li>
       </ul>
       </nav>
       </header>
