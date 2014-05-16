@@ -127,20 +127,20 @@ library(shiny)
         </div>
         <nav id="navigation bar">
         <ul>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_home/">Home</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_home/">Home</a></li>
         <li><a href="#">Modules</a>
         <ul>
-        <li><a href="http://statmos.uw.edu/shiny/mod1_home/">When is a trend actually trending?</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/mod1_home/">When is a trend actually trending?</a></li>
         </ul>
         </li>
         <li><a href="#">Links</a>
         <ul>
         <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
         <li><a href="http://uw.edu">University of Washington</a></li>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_resources/">Other Curriculum Resources</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_resources/">Other Curriculum Resources</a></li>
         </ul>
         </li>
-        <li><a href=""http://statmos.uw.edu/shiny/deltaC_about/"">About Us</a></li>
+        <li><a href=""http://statmos.uw.edu/deltac/deltaC_about/"">About Us</a></li>
         </ul>
         </nav>
         </header>'

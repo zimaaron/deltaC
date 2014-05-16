@@ -7,10 +7,9 @@ library(shiny)
     headerPanel(
       HTML(
         '<!DOCTYPE html>
-        <head>
+      <head>
         <link href="/normalize.css" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-        <script type="text/javascript",src="reveal.js"></script>
         <style>
         header {
         font-family: "Open Sans", sans-serif;
@@ -109,11 +108,8 @@ library(shiny)
         padding: 20px 20px; 
         margin: 30px 0px -15px 0px;
         }
-        #trend {
-        margin: -100px 0px 15px 0px;
-        }
         #titletext {
-        padding: -15px 0px -50px 0px;
+        padding: 40px 0px 0px 0px;
         }
         </style>
         </head>
@@ -124,23 +120,27 @@ library(shiny)
         </div>
         <nav id="navigation bar">
         <ul>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_home/">Home</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_home/">Home</a></li>
         <li><a href="#">Modules</a>
         <ul>
-        <li><a href="http://statmos.uw.edu/shiny/mod1_home/">When is a trend actually trending?</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/mod1_home/">When is a trend actually trending?</a></li>
         </ul>
         </li>
         <li><a href="#">Links</a>
         <ul>
         <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
         <li><a href="http://uw.edu">University of Washington</a></li>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_resources/">Other Curriculum Resources</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_resources/">Other Curriculum Resources</a></li>
         </ul>
         </li>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_about/">About Us</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_about/">About Us</a></li>
         </ul>
         </nav>
-        </header>'
+        </header>
+        <div id="titletext">
+        <h2>Module 1: When is a trend actually trending?</h2>
+        <h3>Autocorrelation in Regression</h3>
+        </div>'
     ),
     windowTitle="deltaC: Statistics for Environmental Change"
   ),  
@@ -153,7 +153,7 @@ library(shiny)
    </article>"),
    HTML('<article>
    <h2>Our first module is now beta-testing!</h2>
-   <p>Our first curriculum module <a href="http://statmos.uw.edu/shiny/mod1_home">When is a trend actually trending?</a> is now ready for testing. The module contains a series of exercises designed to explore the influence of temporal-autocorrelation on inference about trends over time.</p>
+   <p>Our first curriculum module <a href="http://statmos.uw.edu/deltac/mod1_home">When is a trend actually trending?</a> is now ready for testing. The module contains a series of exercises designed to explore the influence of temporal-autocorrelation on inference about trends over time.</p>
    <img id="trend" src="autocorr_trend.png">
            </article>'),
     HTML("<a rel='license' href='http://creativecommons.org/licenses/by/4.0/'><img alt='Creative Commons License' style='border-width:0' src='http://i.creativecommons.org/l/by/4.0/88x31.png' /></a><br /><span xmlns:dct='http://purl.org/dc/terms/' href='http://purl.org/dc/dcmitype/InteractiveResource' property='dct:title' rel='dct:type'>deltaC curriculum material</span> by <span xmlns:cc='http://creativecommons.org/ns#' property='cc:attributionName'>STATMOS</span> is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a>.")

@@ -121,20 +121,20 @@ library(shiny)
         </div>
         <nav id="navigation bar">
         <ul>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_home/">Home</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_home/">Home</a></li>
         <li><a href="#">Modules</a>
         <ul>
-        <li><a href="http://statmos.uw.edu/shiny/mod1_home/">When is a trend actually trending?</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/mod1_home/">When is a trend actually trending?</a></li>
         </ul>
         </li>
         <li><a href="#">Links</a>
         <ul>
         <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
         <li><a href="http://uw.edu">University of Washington</a></li>
-        <li><a href="http://statmos.uw.edu/shiny/deltaC_resources/">Other Curriculum Resources</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_resources/">Other Curriculum Resources</a></li>
         </ul>
         </li>
-        <li><a href=""http://statmos.uw.edu/shiny/deltaC_about/"">About Us</a></li>
+        <li><a href=""http://statmos.uw.edu/deltac/deltaC_about/"">About Us</a></li>
         </ul>
         </nav>
         </header>
@@ -255,7 +255,7 @@ library(shiny)
              HTML('<p>For this exercise, you will be using an interactive web app.</p>  
                     <p>
                     <i class="fa fa-refresh"></i>
-                    <a href="http://statmos.uw.edu/shiny/mod1_slope/" target="_blank"><button class="btn btn-primary" type="button"><font color="white">Launch App</font></button></a></p>
+                    <a href="http://statmos.uw.edu/deltac/mod1_slope/" target="_blank"><button class="btn btn-primary" type="button"><font color="white">Launch App</font></button></a></p>
                    <p>This app is designed to show the influence of autocorrelation on our estimate of a linear trend over time. The dotted lines represent the slope of a linear regression fit to the observations (white circles) within a certain window of time (gray shading). The top trend does not have strong autocorrelation, but the one plotted below does have autocorrelation. You can control the position of the time-window that is used to fit the regression, as well as the width of the window, using the controls.</p>
                   <p> Spend some time exploring the app, and then use it to answer the questions below.</p>'),
              h4("Questions"),
@@ -345,7 +345,7 @@ library(shiny)
              h4("Background"),
              HTML('<p>In the last exercise, we explored how to measure the strength of temporal autocorrelation using the autocorrelation function (ACF) and assess whether it might be a problem for making inference about trends over time using linear regression. The calculation of the ACF itself is labor-intensive, so researchers typically employ software to help us assess autocorrelation in the data over many different lags. </p>
                   <p>In this exercise, we will use an interactive web application to examine patterns of autocorrelation in time-series data. You can access the application by clicking the link below: 
-                  <p><a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
+                  <p><a href="http://statmos.uw.edu/deltac/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
                     <i class="fa fa-refresh"></i>
                     <font color="white">Launch App</font>
                     </button></a></p>
@@ -402,7 +402,7 @@ library(shiny)
                   <p><em>Disadvantages: </em>The slope associated with year no longer represents the long-term trend. Cannot use observations at the beginning of the series.</p>'),
              h4("Instructions"),
              HTML('<p>In this exercise, we will return to the web app that we used for Exercise 7. You can launch the app in a new tab by clicking the button below.</p>
-                  <p><a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
+                  <p><a href="http://statmos.uw.edu/deltac/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
                   <i class="fa fa-refresh"></i>
                   <font color="white">Launch App</font>
                   </button></a></p>
@@ -434,7 +434,7 @@ library(shiny)
                   '),
              h4("Instructions"),
              HTML('<p>We will return to the web app for this exercise. You can launch the app in a new tab by clicking the button below.</p>
-                  <p><a href="http://statmos.uw.edu/shiny/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
+                  <p><a href="http://statmos.uw.edu/deltac/mod1_regression/" target="_blank"><button class="btn btn-primary" type="button">
                   <i class="fa fa-refresh"></i>
                     <font color="white">Launch App</font>
                     </button></a></p>
