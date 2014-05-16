@@ -22,7 +22,7 @@ shinyUI(pageWithSidebar(
       font-size: 18px; 
       line-height: 24px;
       text-align: center;
-      background: url("http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Morteratsch_glacier_1.jpg/1280px-Morteratsch_glacier_1.jpg");
+      background: url("1280px-Morteratsch_glacier_1.jpg");
       background-size: cover;
       color: white;
       }
