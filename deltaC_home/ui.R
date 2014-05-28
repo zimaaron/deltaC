@@ -155,8 +155,8 @@ library(shiny)
    </article>"),
    HTML('<article>
    <h2>Our first module is now beta-testing!</h2>
-   <p>Our first curriculum module <a href="http://statmos.uw.edu/deltac/mod1_home">When is a trend actually trending?</a> is now ready for testing. The module contains a series of exercises designed to explore the influence of temporal-autocorrelation on inference about trends over time.</p>
    <img id="trend" src="autocorr_trend.png">
+   <p>Our first curriculum module <a href="http://statmos.uw.edu/deltac/mod1_home">When is a trend actually trending?</a> is now ready for testing. The module contains a series of exercises designed to explore the influence of temporal-autocorrelation on inference about trends over time.</p>
            </article>'),
    HTML('<article>
    <h2>We want your feedback</h2>
