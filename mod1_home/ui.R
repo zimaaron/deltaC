@@ -270,13 +270,14 @@ library(shiny)
                   <tr>
                   <td align="center" ><p><b>Time-Series</b></td>
                   <td align="center" ><p><b>20</b></b></td>
-                  <td align="center" ><p><b>35</b></b></td>
+                  <td align="center" ><p><b>30</b></b></td>
+                  <td align="center" ><p><b>40</b></b></td>
                   <td align="center" ><p><b>50</b></b></td>
-                  <td align="center" ><p><b>65</b></b></td>
+                  <td align="center" ><p><b>60</b></b></td>
+                  <td align="center" ><p><b>70</b></b></td>
                   <td align="center" ><p><b>80</b></b></td>
-                  <td align="center" ><p><b>95</b></b></td>
-                  <td align="center" ><p><b>110</b></b></td>
-                  <td align="center" ><p><b>125</b></b></td>
+                  <td align="center" ><p><b>90</b></b></td>
+                  <td align="center" ><p><b>100</b></b></td>
                   <td align="center" ><p><b>Std. Dev.</b></b></td>
                   </tr>
                   <tr>
@@ -290,9 +291,11 @@ library(shiny)
                   <td align="center" > </td>
                   <td align="center" > </td>
                   <td align="center" > </td>
+                  <td align="center" > </td>
                   </tr>
                   <tr>
                   <td align="center" ><p>Autocorrelated</p></td>
+                  <td align="center" > </td>
                   <td align="center" > </td>
                   <td align="center" > </td>
                   <td align="center" > </td>
