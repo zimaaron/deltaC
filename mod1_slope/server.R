@@ -8,7 +8,6 @@
 library(shiny)
 
 ##Generates two time-series: one with memory, one without.
-set.seed(42)
 int <- 0.5
 slope <- 0.03
 n <- 150
