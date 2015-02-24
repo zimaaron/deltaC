@@ -1,0 +1,60 @@
+Developing interactive deltaC web applications with Shiny
+
+Ian Breckheimer June‭ ‬2014
+Editted by Aaron Zimmerman Feb 2015
+
+The code for the deltaC interactive applications is hosted on GitHub,‭ ‬in an open repository You can visit the repository online at:
+https://github.com/ibreckhe/deltaC‭ 
+
+‭	To modify the code or add a new module, you first need to create a free GitHub account and then fork the deltaC repository so that you can make changes. A tutorial to help you get started with git and GitHub is here: https://help.github.com/articles/set-up-git 
+
+‭	Once you have your account set up, you can click the “Fork” button on the deltaC repository home page. This creates a new version of the code that is attached to your account that you can modify.
+
+‭	‬Usually we modify a copy of the code locally,‭ ‬test it out,‭ ‬and then commit the changes to the server once we have a new version that works.‭  ‬To create a local copy of the repository on a given machine,‭ ‬you can use the following command:
+
+git clone‭ <‬repository‭> <‬directory‭>
+
+where‭ ‬<repository‭>‬ is the https URL of the‭ ‬forked‭ ‬repository you want to clone,‭ ‬and‭ ‬<directory‭>‬ is the path to the folder where you want the repository to live.
+
+	Although you can‭ ‬modify the files in any text editor and then commit the changes to GitHub from the terminal,‭ ‬I use Rstudio to help manage the modules.‭  ‬In each folder is a directory representing each page on the website.‭ ‬Inside those folders is a file with an extension‭ ‬.Rproj.‭  ‬Opening this file from within Rstudio will open the relevant files for that module.‭  ‬You can set up Rstudio to remember which remote repository to work with in each project by going to‭ ‬Tools‭ > ‬Version Control‭ > ‬Project Setup‭…‬ and changing the Origin field to the new https URL of the repository you just created.‭ ‬Now whenever you make a change,‭ ‬you can upload it to the server by clicking the‭ “‬Commit‭”‬ button in Rstudio. If you can’t change the origin URL in Rstudio, you should be able to change it by going to the directory in a terminal and entering:
+
+git config remote.origin.url <your new https url>
+
+	You can create a new module in Rstudio,‭ ‬by going to‭ ‬File‭…‬ > New Project‭…‬ > New Directory and selecting‭ ‬“Shiny Web Application‭”‬.‭ ‬In the new window,‭ ‬you can give the page a name‭ (‬by default,‭ ‬this name will be part of the URL‭)‬,‭ ‬and make it a subdirectory of the deltaC folder with the existing pages.‭ ‬Check the‭ “‬Create a git repository for this project‭”‬ button.
+
+	All of the deltaC pages are Shiny web applications,‭ ‬which are basically R scripts that are used by the server to build interactive web pages with R running underneath to generate plots and analysis.‭  ‬The documentation for Shiny is quite good:‭ ‬http://shiny.rstudio.com/‭ 
+
+‭	To test the web apps locally, all you need to do is save your changes and hit the “Run App…” button in Rstudio.
+
+‭	‬Once you have a new or updated module that is ready to go up on the web,‭ ‬make sure you commit all of the changes and sync the local version with the remote repository on GitHub.
+
+	The modules are hosted on a Windows Azure virtual machine,‭ ‬and in order to make changes,‭ ‬you need to access the server via ssh.‭ ‬From a terminal,‭ ‬you can access the server by typing‭ 
+
+ssh‭ <‬username‭>@‬uwshiny.cloudapp.net
+
+and entering your password.‭ ‬In order to login you need to have Statistics IT services set you up with a username and password.
+
+	Once you are logged on to the server,‭ ‬you need to‭ ‬clone the GitHub repository,‭ ‬so that the server has a current copy of your code.‭ ‬You can do this by typing
+
+git clone‭ <‬repository‭> <‬directory‭>
+
+which will put the local copy of the code in‭ ‬<directory‭>‬.‭  ‬You should only have to do this once.‭  ‬For further updates,‭ ‬you can enter the directory and pull down the latest updates from GitHub by typing
+
+cd deltaC
+git pull
+
+	Now that you have an updated version of the code,‭ ‬you need to copy the modules to the appropriate folder on the server.‭  ‬You can do this by typing
+
+cp‭ ‬-r‭ ‬-f‭ ‬<folder name‭> ‬/srv/shiny-server/
+
+where‭ ‬<folder name‭>‬ is the name of the folder containing the module you wish to update.‭ ‬You can also pass a list of folder names separated by spaces if you want to update all of the folders.‭  ‬The updated code should be immediately visible if you visit the modules on the web at‭ ‬http://statmos.uw.edu/deltac/deltaC_home/‭ 
+
+
+
+
+
+Other helpful tips:
+
+	Shiny is quite flexible in how you set up user interfaces for web applications.‭ ‬There are R wrapper functions for most of the common html tags,‭ ‬and you can embed blocks of HTML or CSS to be rendered by wrapping the code in the‭ ‬HTML‭()‬ function.‭  ‬I‭’‬ve standardized the look of each module by using a common HTML header‭ ‬for each application.‭ ‬To create a new module with the same template,‭ ‬just copy the header from a previous module to a new script.
+
+	Documents,‭ ‬images,‭ ‬and other content that are linked to on the page,‭ ‬but not generated by R can go in the‭ ‬www directory in each module.‭ ‬This content can now be linked without the http prefix.‭ ‬E.g.‭ ‬<a href‭=”‬image.jpg‭”‬> will work if‭ ‬“image.jpg‭”‬ is in the‭ ‬www folder.
