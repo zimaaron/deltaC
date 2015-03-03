@@ -131,7 +131,7 @@ shinyUI(fluidPage(
       <li><a href="http://statmos.uw.edu/deltac/deltaC_home/">Home</a></li>
       <li><a href="#">Modules</a>
       <ul>
-      <li><a href="http://statmos.uw.edu/deltac/mod1_home"/>When is a trend actually trending?</a></li>
+      <li><a href="http://statmos.uw.edu/deltac/mod1_home/">When is a trend actually trending?</a></li>
       <li><a href="http://statmos.uw.edu/deltac/mod2_home/">When is a spatial data spatially varying?</a></li>
       </ul>
       </li>
@@ -139,7 +139,7 @@ shinyUI(fluidPage(
       <ul>
       <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
       <li><a href="http://uw.edu">University of Washington</a></li>
-      <li><a href="http://statmos.uw.edu/deltac/deltaC_resources">Other Educational Resources</a></li>
+      <li><a href="http://statmos.uw.edu/deltac/deltaC_resources/">Other Educational Resources</a></li>
       </ul>
       </li>
       <li><a href="http://statmos.uw.edu/deltac/deltaC_about/">About Us</a></li>
