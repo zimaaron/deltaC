@@ -140,24 +140,19 @@ library(shiny)
         </nav>
         </header>
         <div id="titletext">
-        <h2>Module 1: When is a trend actually trending?</h2>
-        <h3>Autocorrelation in Regression</h3>
+        <h2>Module 2: When is a spatial data spatially varying?</h2>
+        <h3>Spatial correlation</h3>
         </div>'
     ),
-    windowTitle="deltaC Module #1: When is a trend actually trending?"
+    windowTitle="deltaC Module #2: Spatial Variation"
   ),  
   
   # Sidebar with navigation options
   navlistPanel(
     tabPanel("Module Home",
-             h4("Module Background"),
-             HTML('<p>Trends are all around us, and detecting trends over time is often the first step in responding to our surroundings in school, business, or life. We live in a world that is always changing, but not all of the changes we see are part of a long-term trend. How do we judge wether a change we see is really a trend? In everyday life, we often make this judgement subjectively.  You might not consider a new band to be trending if you hear a friend talk about it once, for example, but if you hear two different groups of your friends talking about the band in the same week, you might have a different judgement. In many situations these kinds of subjective judgements are fine, but what about trends with more serious consequences for society, like pollution?</p>
-                  <p>Environmental scientists and statisticians have developed quantitative methods for judging whether something is really trending. Judging whether changes in the environment represent long-term trends or just short-term variability is important to recognizing environmental problems and assessing whether they are getting better or worse.</p>'),
-             h4("Preparation"),
-            HTML('This set of activities is designed to familiarize you with some of these methods for detecting trends over time. The methods build on the basic statistical method of linear regression, so some familiarity with regression will be helpful.  The exercises are a mix of different kinds of activities, and each of the nine exercises are designed to take between 45 and 60 minutes to complete. At a minimum, you will need a modern web browser such as Google Chrome or Mozilla Firefox. One of the exercises also requires Microsoft Excel or another spreadsheet program such as the free <a href="https://www.libreoffice.org/download/libreoffice-stable/">LibreOffice Calc</a> that can read Excel files.'),
-            h4("Additional Materials"),
-            HTML('<p>A zip file with printable versions of the exercises and supporting data can be downloaded <a href="mod1_all.zip"> here </a>.</p>
-                 <p>Model responses and rubrics for the questions are available <a href="mod1_answers.zip"> here </a> (password protected).</p>')
+             h4(" New Module Coming Soon!"),
+             HTML('<p>Our newest module in the deltaC project will be focused on giving students intuition about what it means for spatial data to be spatially varying and when we need to care.</p>
+                  <p>This module will be developed over the next few months and our goal is to have it completed and running by the summer.</p>'),
     ),
     "-----",
     "Exercises",
