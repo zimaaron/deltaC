@@ -135,7 +135,7 @@ library(shiny)
         <li><a href="http://statmos.uw.edu/deltac/deltaC_resources/">Other Curriculum Resources</a></li>
         </ul>
         </li>
-        <li><a href=""http://statmos.uw.edu/deltac/deltaC_about/"">About Us</a></li>
+        <li><a href="http://statmos.uw.edu/deltac/deltaC_about/">About Us</a></li>
         </ul>
         </nav>
         </header>

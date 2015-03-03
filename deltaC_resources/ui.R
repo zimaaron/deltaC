@@ -137,12 +137,12 @@ shinyUI(fluidPage(
       </li>
       <li><a href="#">Links</a>
       <ul>
-      <li><a href="http://statmos.uw.edu">Statmos Home/</a></li>
-      <li><a href="http://uw.edu">University of Washington/</a></li>
-      <li><a href="http://statmos.uw.edu/deltac/deltaC_resources">Other Educational Resources/</a></li>
+      <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
+      <li><a href="http://uw.edu">University of Washington</a></li>
+      <li><a href="http://statmos.uw.edu/deltac/deltaC_resources">Other Educational Resources</a></li>
       </ul>
       </li>
-      <li><a href=""http://statmos.uw.edu/deltac/deltaC_about/"">About Us</a></li>
+      <li><a href="http://statmos.uw.edu/deltac/deltaC_about/">About Us</a></li>
       </ul>
       </nav>
       </header>
@@ -150,7 +150,7 @@ shinyUI(fluidPage(
       <h2>Educational Resources on Climate Change</h2>
       </div>'
     ),
-    windowTitle="deltaC: additional educational resources?"
+    windowTitle="deltaC: additional educational resources"
   ),  
   
   # Sidebar with navigation options
