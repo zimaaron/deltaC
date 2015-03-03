@@ -153,7 +153,7 @@ library(shiny)
              h4("Module Background"),
              HTML("<p>Welcome to our new module! The focus in our second module is to give students some understanding and intuition about spatial variaiton and when we need to think aboutit. It's still very much under construction so please bear with us.</p>
                    <p>We'll be developing it and adding to it throughout the spring and our goal is to have it completed by the start of the summer.</p>")
-    ),
+    ),d
     "-----",
     "Exercises",
     ####Code for exercise 1 ####
