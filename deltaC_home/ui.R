@@ -130,6 +130,7 @@ library(shiny)
         <li><a href="#">Modules</a>
         <ul>
         <li><a href="http://statmos.uw.edu/deltac/mod1_home/">When is a trend actually trending?</a></li>
+        <li><a href="http://statmos.uw.edu">Statmos Home</a></li>
         </ul>
         </li>
         <li><a href="#">Links</a>
