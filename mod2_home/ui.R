@@ -151,8 +151,8 @@ library(shiny)
   navlistPanel(
     tabPanel("Module Home",
              h4("Module Background"),
-             HTML('<p>Trends are all around us, and detecting trends over time is often the first step in responding to our surroundings in school, business, or life. We live in a world that is always changing, but not all of the changes we see are part of a long-term trend. How do we judge wether a change we see is really a trend? In everyday life, we often make this judgement subjectively.  You might not consider a new band to be trending if you hear a friend talk about it once, for example, but if you hear two different groups of your friends talking about the band in the same week, you might have a different judgement. In many situations these kinds of subjective judgements are fine, but what about trends with more serious consequences for society, like pollution?</p>
-                  <p>Environmental scientists and statisticians have developed quantitative methods for judging whether something is really trending. Judging whether changes in the environment represent long-term trends or just short-term variability is important to recognizing environmental problems and assessing whether they are getting better or worse.</p>'),
+             HTML("<p>Welcome to our new module! The focus in our second module is to give students some understanding and intuition about spatial variaiton and when we need to think aboutit. It's still very much under construction so please bear with us.</p>
+                   <p>We'll be developing it and adding to it throughout the spring and our goal is to have it completed by the start of the summer.</p>")
     ),
     "-----",
     "Exercises",
